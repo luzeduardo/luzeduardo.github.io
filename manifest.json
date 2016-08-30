@@ -1,7 +1,8 @@
 {
+  "lang": "en",
   "background_color": "#ffffff",
-  "name": "",
-  "short_name": "",
+  "name": "Taurant",
+  "short_name": "Tau",
   "display": "standalone",
   "icons": [
     {
@@ -16,5 +17,9 @@
     }
   ],
   "theme_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/index.htm",
+  "display": "fullscreen",
+  "orientation": "landscape",
 }
