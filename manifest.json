@@ -1,6 +1,5 @@
 {
   "lang": "en",
-  "background_color": "#ffffff",
   "name": "Taurant",
   "short_name": "Tau",
   "display": "standalone",
@@ -16,10 +15,11 @@
       "type": "image\/png"
     }
   ],
-  "theme_color": "#ffffff",
+  "background_color": "#d5495b",
+  "theme_color": "#d5495b",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/index.htm",
+  "start_url": "index.htm",
   "display": "fullscreen",
-  "orientation": "landscape",
+  "orientation": "portrait",
 }
