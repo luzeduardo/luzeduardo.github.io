@@ -19,7 +19,7 @@
   "theme_color": "#d5495b",
   "display": "standalone",
   "scope": "/",
-  "start_url": "index.htm",
+  "start_url": "index.html",
   "display": "fullscreen",
   "orientation": "portrait"
 }
