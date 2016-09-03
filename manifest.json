@@ -15,6 +15,11 @@
       "type": "image/png"
     },
     {
+      "src": "/public/images/mstile-310x310.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    },
+    {
       "src": "/public/images/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
@@ -24,7 +29,7 @@
   "theme_color": "#d5495b",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "./",
   "display": "fullscreen",
   "orientation": "portrait"
 }
