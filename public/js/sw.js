@@ -5,14 +5,6 @@ if ('serviceWorker' in navigator) {
     console.log('Boo!', err);
   });
 }
-
-navigator.storageQuota.queryInfo("temporary").then(
-	function(storageInfo){
-		initializeCache(storageInfo.usage,
-			storageInfo.quota - storageInfo.usage)
-		console.log(storageInfo.usage);
-		console.log(storageInfo.quota);
-});
 // navigator.serviceWorker.ready.then(function(registrationNotificationTag){
 // 	registration.sync.register('outbox').then(function(){
 // 		//success
