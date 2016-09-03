@@ -21,5 +21,5 @@
   "scope": "/",
   "start_url": "index.htm",
   "display": "fullscreen",
-  "orientation": "portrait",
+  "orientation": "portrait"
 }
