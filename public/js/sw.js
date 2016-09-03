@@ -9,10 +9,3 @@ if ('serviceWorker' in navigator) {
     	console.log('Boo!', err);
   	});
 }
-// navigator.serviceWorker.ready.then(function(registrationNotificationTag){
-// 	registration.sync.register('outbox').then(function(){
-// 		//success
-// 	}, function(){
-// 		//fail
-// 	});
-// });

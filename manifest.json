@@ -24,7 +24,7 @@
   "theme_color": "#d5495b",
   "display": "standalone",
   "scope": "/",
-  "start_url": "index.html",
+  "start_url": "/",
   "display": "fullscreen",
   "orientation": "portrait"
 }
