@@ -23,7 +23,7 @@ self.addEventListener('install', function(e){
 });
 
 self.addEventListener('activate', function(e){
-  console.log('[serviceWorker] Activate');
+   console.log('[serviceWorker] Activate');
   e.waitUntil(
     caches.keys().then(function(keyList) {
       return Promisse.all(keyList.map(function(key) {
@@ -53,7 +53,10 @@ var filesToCache = [
   '/public/images/mstile-144x144.png',
   '/public/images/favicon-32x32.png',
   '/public/images/mstile-150x150.png',
+  'public/css/bootstrap.min.css',
   '/public/css/styles.css',
+  'public/js/jquery.min.js',
+  'public/js/bootstrap.min.js',
   '/public/js/sw.js'
 ];
 self.addEventListener('fetch', function(e) {

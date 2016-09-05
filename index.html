@@ -6,8 +6,8 @@
 	  <title>Taurant</title>
 	  <meta name="description" content="">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	  <meta name="author" content="Eduardo Luz">
-	  
 	  <link rel="apple-touch-icon" sizes="180x180" href="public/images/apple-touch-icon.png">
 	  <link rel="icon" type="image/png" href="public/images/favicon-32x32.png" sizes="32x32">
 	  <link rel="icon" type="image/png" href="public/images/favicon-16x16.png" sizes="16x16">
@@ -15,6 +15,7 @@
 	  <link rel="mask-icon" href="public/images/safari-pinned-tab.svg" color="#5bbad5">
 	  <meta name="theme-color" content="#ffffff">
 
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
 	  <link rel="stylesheet" href="public/css/styles.css?v=1.0">
 	  <!--[if lt IE 9]>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -23,23 +24,36 @@
 	</head>
 
 	<body>
-		<header class="header">
-			<div>
-    			<h1 class="header__title">Stalk</h1>
-    		</div>
-    		<button id="butRefresh" class="headerButton"></class="header__search" button>
-  		</header>
-  		
-  		<main class="main" hidden>
-  		</main>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Taurant</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-		<div class="dialog-container">
-		</div>
+    <div class="container">
 
-		<div class="loader">
-		    <svg viewBox="0 0 32 32" width="32" height="32">
-		      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
-		    </svg>
-  		</div>  
+      <div class="starter-template">
+        <h1>Taurant</h1>
+        <p class="lead">project<br></p>
+      </div>
+
+    </div><!-- /.container -->
+
+		<script src="public/js/jquery.min.js"></script>
+		<script src="public/js/bootstrap.min.js"></script>
 	</body>
 </html>
