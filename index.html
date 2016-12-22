@@ -1,62 +1,43 @@
-<!doctype html>
 
-<html lang="en">
+<html>
 	<head>
-	  <meta charset="utf-8">
-	  <title>Taurant</title>
-	  <meta name="description" content="">
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">    
-	  <meta name="author" content="Eduardo Luz">
-    <meta name="theme-color" content="#ffffff">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    </head>
 
-	  <link rel="apple-touch-icon" sizes="180x180" href="public/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="public/images/favicon-192x192.png" sizes="192x192">    
-    <link rel="apple-touch-startup-image" href="public/images/favicon-192x192.png">
-	  <link rel="manifest" href="/manifest.json">
-	  <link rel="mask-icon" href="public/images/safari-pinned-tab.svg" color="#5bbad5">	  
+	<body id="bodyContent" onload="init()" style="margin:0px;padding:0px;overflow:hidden;height:355px">
+        <iframe id="ifrPagamento" src="https://vivocontrole.stg.m4u.com.br/varejo?k=6QyZuIrqkSAbJMBb4fwNu8zECi%2FJIgrXeLuDZaHW14I%3D&canal=rlaYD1OB2HCIidGFQDPZ2A%3D%3D&msisdn=3j6nRLPBkhBDOf1r9nGeXQ%3D%3D&cpf=MDyyhgyQXvqa8eRaVphFtQ%3D%3D&plano=k4Pq2V4Av0ItnlIXDKAPGIJoWD4dpdqltYIMyKt6ffU%3D&cpfPr=CK4BceMIqdJvK6aPeZp6gA%3D%3D&cnpjPr=NE49yPg%2FXZ1xGzaIqDcVvA%3D%3D&parentUrl=FAy%2FaZTrnk0%3D"
+            frameborder="0" style="overflow:hidden;width:100%;height:100%"></iframe>
+    </body>
 
-    <link href="public/css/bootstrap.min.css" rel="stylesheet">
-	  <link rel="stylesheet" href="public/css/styles.css?v=1.0">
-	  <!--[if lt IE 9]>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-	  <![endif]-->
-	  <script src="public/js/sw.js"></script>
-	</head>
+	<script type="text/javascript">
 
-	<body>
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Taurant</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+        function init() {
+            addListener();
+        }
 
-    <div class="container">
+		function addListener() {
+			window.addEventListener("message", receiveMessage, false);
+		}
 
-      <div class="starter-template">
-        <h1>Taurant</h1>
-        <p class="lead">project<br></p>
-      </div>
+		function receiveMessage(message) {
+			
+			if (message) {
 
-    </div><!-- /.container -->
+				var data = JSON.parse(message.data);
 
-		<script src="public/js/jquery.min.js"></script>
-		<script src="public/js/bootstrap.min.js"></script>
-	</body>
+				if (data.code) {
+
+					if(data.code === "0") {
+                        app.returnStatus(0);
+					}
+					else {
+                        app.returnStatus(1);
+					}
+				}
+
+			}
+
+		}
+
+	</script>
 </html>
