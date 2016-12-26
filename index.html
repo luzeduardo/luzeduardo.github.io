@@ -9,25 +9,4 @@
             frameborder="0" style="overflow:hidden;width:100%;height:100%"></iframe>
     </body>
 
-	<script type="text/javascript">
-
-        function init() {
-            addListener();
-        }
-
-		function addListener() {
-			window.addEventListener("message", receiveMessage, false);
-		}
-
-		function receiveMessage(message) {
-			
-			if (message) {
-
-				var data = JSON.parse(message.data);
-
-			}
-
-		}
-
-	</script>
-</html>
+	</html>
