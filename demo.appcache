@@ -4,6 +4,7 @@ CACHE:
 
 FALLBACK:
 / /manutencao.html
+* /manutencao.html
 
 NETWORK:
 *
