@@ -1,4 +1,7 @@
 CACHE MANIFEST
-# 2017-01-02 v1.0.
+
+NETWORK:
+*
+
 FALLBACK:
-/html/ /manutencao.html
+/ /manutencao.html
