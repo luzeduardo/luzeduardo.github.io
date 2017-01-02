@@ -1,10 +1,10 @@
 CACHE MANIFEST
 CACHE:
-/manutencao.html
+manutencao.html
 
 FALLBACK:
-/ /manutencao.html
-* /manutencao.html
+/ manutencao.html
+* manutencao.html
 
 NETWORK:
 *
