@@ -7,13 +7,16 @@
     "sw-precache": "^4.2.2"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
+    "build": "webpack --config webpack.prod.config.js -p --progress --colors",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod": "NODE_ENV=production node server.js",
+    "postinstall": "webpack --config webpack.prod.config.js -p --progress --colors"
   }
 }
