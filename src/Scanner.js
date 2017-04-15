@@ -24,9 +24,9 @@ class Scanner extends React.Component {
                 patchSize: "medium",
                 halfSample: true
             },
-            numOfWorkers: 2,
+            numOfWorkers: 4,
             decoder: {
-                readers : [ "code_128_reader"]
+                readers : [ "ean_reader"]
             },
             locate: true
         }, function(err) {
