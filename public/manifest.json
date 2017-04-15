@@ -10,5 +10,7 @@
   ],
   "start_url": "./",
   "display": "standalone",
-  "orientation": "landscape"
+  "orientation": "landscape",
+  "background_color": "#000",
+  "theme_color": "#536878"
 }
