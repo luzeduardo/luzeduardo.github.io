@@ -24,15 +24,9 @@ class Scanner extends React.Component {
                 patchSize: "medium",
                 halfSample: true
             },
-            numOfWorkers: navigator.hardwareConcurrency,
+            numOfWorkers: navigator.hardwareConcurrency > 1 ? navigator.hardwareConcurrency-1 : 1,
             decoder: {
-                readers : [ "ean_reader"],
-                debug: {
-                    drawBoundingBox: true,
-                    showFrequency: true,
-                    drawScanline: true,
-                    showPattern: true
-                }
+                readers : [ "ean_reader"]
             },
             locate: true
         }, function(err) {
