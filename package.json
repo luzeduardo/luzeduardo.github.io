@@ -14,6 +14,7 @@
     "css-loader": "^0.28.0",
     "express": "^4.15.2",
     "path": "^0.12.7",
+    "quagga": "^0.11.6",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "sass-loader": "^6.0.3",
