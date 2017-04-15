@@ -7,6 +7,7 @@
     "sw-precache": "^4.2.2"
   },
   "dependencies": {
+    "@mars/heroku-js-runtime-env": "^3.0.0",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-react": "^6.24.1",
@@ -21,7 +22,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "postinstall": "npm install && npm run build"
+    "build": "react-scripts build"
   }
 }
