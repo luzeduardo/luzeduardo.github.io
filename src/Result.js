@@ -36,6 +36,7 @@ class Result extends React.Component {
         return (
             <div>
                 <ListItem
+                    onItemTouchTap={this.props.onItemTouchTap}
                     rightIconButton={rightIconMenu}
                     primaryText={result.codeResult.code}
                     secondaryText=""

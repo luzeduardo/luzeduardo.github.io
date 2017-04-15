@@ -24,8 +24,9 @@ class Layout extends React.Component {
     }
 
     _onItemTouchTapDeleter(key){
-        let data = this.state.results.filter(x => x !== key);
-        this.setState({results: data});
+        console.log(key);
+        // let data = this.state.results.filter(x => x !== key);
+        // this.setState({results: data});
     }
 
     render() {
