@@ -35,11 +35,11 @@ class Scanner extends React.Component {
             }
             Quagga.start();
         });
-        Quagga.onDetected(this._onDetected);
+        Quagga.onDetected(this._onDetected.bind(this));
     }
 
     componentWillUnmount() {
-        Quagga.offDetected(this._onDetected);
+        Quagga.offDetected(this._onDetected.bind(this));
     }
 
     _onDetected(result) {
