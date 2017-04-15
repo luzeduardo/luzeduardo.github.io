@@ -1,6 +1,6 @@
 {
-  "short_name": "create-react-pwa",
-  "name": "Create React PWApp",
+  "short_name": "price-react-pwa",
+  "name": "Price React PWA",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,5 +9,6 @@
     }
   ],
   "start_url": "./",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "landscape"
 }
