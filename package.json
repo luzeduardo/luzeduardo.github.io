@@ -15,10 +15,11 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-geolocated": "^1.0.3",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-tap-event-plugin": "^2.0.1",
+    "sw-precache": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build && sw-precache --config=sw-precache-config.js"
   }
 }
