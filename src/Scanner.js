@@ -17,8 +17,7 @@ class Scanner extends React.Component {
                 constraints: {
                     width: 640,
                     height: 480,
-                    // facingMode: "environment"
-                    facingMode: "user"
+                    facingMode: "environment"
                 }
             },
             locator: {

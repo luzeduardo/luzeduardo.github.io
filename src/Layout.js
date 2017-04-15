@@ -45,6 +45,12 @@ class Layout extends React.Component {
     render() {
         return (
             <div>
+                <RaisedButton label={this.state.scanning ? 'Parar leitura' : 'Ler código de barras'}
+                              primary={!this.state.scanning }
+                              secondary={this.state.scanning }
+                              onClick={this._scan.bind(this)}
+                              fullWidth={true}
+                />
 
 
                 <List>
@@ -53,13 +59,6 @@ class Layout extends React.Component {
                     ))}
                 </List>
                 {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
-
-                    <RaisedButton label={this.state.scanning ? 'Parar leitura' : 'Ler código de barras'}
-                                  primary={!this.state.scanning }
-                                  secondary={this.state.scanning }
-                                  onClick={this._scan.bind(this)}
-                                  fullWidth={true}
-                    />
 
             </div>
         )
