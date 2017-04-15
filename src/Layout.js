@@ -23,17 +23,25 @@ class Layout extends React.Component {
     _onDetected(result) {
         if(!this.state.codes.includes(result.codeResult.code)){
             this.setState({
-                codes: this.state.results.concat([result.codeResult.code]),
+                codes: this.state.codes.concat([result.codeResult.code]),
                 results: this.state.results.concat([result]),
                 scanning: false
             });
         }
     }
 
-    _onItemTouchTapDeleter(key){
-        console.log(key);
-        // let data = this.state.results.filter(x => x !== key);
-        // this.setState({results: data});
+    _onItemTouchTapDeleter(result){
+        console.log(result);
+        console.log(this.state.results);
+        console.log(this.state.codes);
+        let codes = this.state.codes.filter(key => result.codeResult.code === key);
+        let results = this.state.results.filter(obj => result.codeResult.code !== obj.codeResult.code);
+
+        this.setState({
+            codes,
+            results,
+            scanning: false
+        });
     }
 
     render() {
@@ -46,7 +54,7 @@ class Layout extends React.Component {
 
                 <List>
                     {this.state.results.map((result, index) => (
-                        <Result onItemTouchTap={this._onItemTouchTapDeleter(result.codeResult.code)} key={index} result={result} />
+                        <Result onItemTouchTap={this._onItemTouchTapDeleter.bind(this, result)} key={index} result={result} />
                     ))}
                 </List>
                 {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}

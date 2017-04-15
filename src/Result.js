@@ -13,20 +13,23 @@ const iconButtonElement = (
     <IconButton
         touch={true}
         tooltip="more"
-        tooltipPosition="bottom-left"
-    >
-    <MoreVertIcon color={grey400} />
+        tooltipPosition="bottom-left">
+        <MoreVertIcon color={grey400} />
     </IconButton>
 );
 
 const rightIconMenu = (props) => (
     <IconMenu iconButtonElement={iconButtonElement}>
         <MenuItem>Forward</MenuItem>
-        <MenuItem onItemTouchTap={props.onItemTouchTap}>Delete</MenuItem>
+        <MenuItem onTouchTap={props.onItemTouchTap}>Delete</MenuItem>
     </IconMenu>
 );
 
 class Result extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
     render() {
         const result = this.props.result;
 
