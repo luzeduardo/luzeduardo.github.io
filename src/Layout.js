@@ -31,9 +31,6 @@ class Layout extends React.Component {
     }
 
     _onItemTouchTapDeleter(result){
-        console.log(result);
-        console.log(this.state.results);
-        console.log(this.state.codes);
         let codes = this.state.codes.filter(key => result.codeResult.code === key);
         let results = this.state.results.filter(obj => result.codeResult.code !== obj.codeResult.code);
 
