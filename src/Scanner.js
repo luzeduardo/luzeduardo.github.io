@@ -22,12 +22,13 @@ class Scanner extends React.Component {
             },
             locator: {
                 patchSize: "medium",
-                halfSample: true
+                halfSample: false
             },
-            numOfWorkers: navigator.hardwareConcurrency > 1 ? navigator.hardwareConcurrency-1 : 1,
+            numOfWorkers: navigator.hardwareConcurrency,
             decoder: {
                 readers : [ "ean_reader"]
             },
+            singleChannel: false,
             locate: true
         }, function(err) {
             // if (err.name === "NotAllowedError") {
@@ -47,7 +48,7 @@ class Scanner extends React.Component {
 
     _onDetected(result) {
         this.props.onDetected(result);
-        Quagga.stop();
+        // Quagga.stop();
     }
 }
 

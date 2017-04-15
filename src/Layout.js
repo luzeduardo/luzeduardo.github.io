@@ -22,6 +22,9 @@ class Layout extends React.Component {
 
     _onDetected(result) {
         if(!this.state.codes.includes(result.codeResult.code)){
+
+            console.log(result.codeResult);
+
             this.setState({
                 codes: this.state.codes.concat([result.codeResult.code]),
                 results: this.state.results.concat([result]),
