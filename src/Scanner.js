@@ -26,10 +26,19 @@ class Scanner extends React.Component {
             },
             numOfWorkers: navigator.hardwareConcurrency,
             decoder: {
-                readers : [ "ean_reader"]
+                readers : [ "ean_reader"],
+                debug: {
+                    drawBoundingBox: true,
+                    showFrequency: true,
+                    drawScanline: true,
+                    showPattern: true
+                }
             },
             locate: true
         }, function(err) {
+            // if (err.name === "NotAllowedError") {
+            // }
+
             if (err) {
                 return console.log(err);
             }
