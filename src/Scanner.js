@@ -15,9 +15,10 @@ class Scanner extends React.Component {
             inputStream: {
                 type : "LiveStream",
                 constraints: {
-                    width: 320,
-                    height: 240,
-                    facingMode: "environment"
+                    width: 640,
+                    height: 480,
+                    // facingMode: "environment"
+                    facingMode: "user"
                 }
             },
             locator: {
@@ -39,6 +40,7 @@ class Scanner extends React.Component {
             }
             Quagga.start();
         });
+        Quagga.CameraAccess.enumerateVideoDevices().then(function(devices) { console.log(devices)});
         Quagga.onDetected(this._onDetected.bind(this));
     }
 
@@ -48,7 +50,7 @@ class Scanner extends React.Component {
 
     _onDetected(result) {
         this.props.onDetected(result);
-        Quagga.stop();
+        // Quagga.stop();
     }
 }
 

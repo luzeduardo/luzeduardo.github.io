@@ -23,8 +23,6 @@ class Layout extends React.Component {
     _onDetected(result) {
         if(!this.state.codes.includes(result.codeResult.code)){
 
-            console.log(result.codeResult);
-
             this.setState({
                 codes: this.state.codes.concat([result.codeResult.code]),
                 results: this.state.results.concat([result]),
@@ -47,10 +45,7 @@ class Layout extends React.Component {
     render() {
         return (
             <div>
-                <RaisedButton label={this.state.scanning ? 'Parar leitura' : 'Ler código de barras'}
-                              primary={!this.state.scanning }
-                              secondary={this.state.scanning }
-                              onClick={this._scan.bind(this)} />
+
 
                 <List>
                     {this.state.results.map((result, index) => (
@@ -58,6 +53,13 @@ class Layout extends React.Component {
                     ))}
                 </List>
                 {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
+
+                    <RaisedButton label={this.state.scanning ? 'Parar leitura' : 'Ler código de barras'}
+                                  primary={!this.state.scanning }
+                                  secondary={this.state.scanning }
+                                  onClick={this._scan.bind(this)}
+                                  fullWidth={true}
+                    />
 
             </div>
         )
