@@ -11,22 +11,20 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 
-
 const iconButtonElement = (
     <IconButton
         touch={true}
         tooltip="more"
         tooltipPosition="bottom-left"
     >
-        <MoreVertIcon color={grey400} />
+    <MoreVertIcon color={grey400} />
     </IconButton>
 );
 
 const rightIconMenu = (
     <IconMenu iconButtonElement={iconButtonElement}>
-        <MenuItem>Reply</MenuItem>
         <MenuItem>Forward</MenuItem>
-        <MenuItem>Delete</MenuItem>
+        <MenuItem onItemTouchTap="" >Delete</MenuItem>
     </IconMenu>
 );
 

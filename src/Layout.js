@@ -23,6 +23,11 @@ class Layout extends React.Component {
         this.setState({results: this.state.results.concat([result])});
     }
 
+    _onItemTouchTapDeleter(key){
+        let data = this.state.results.filter(x => x != key);
+        this.setState({results: data});
+    }
+
     render() {
         return (
             <div>
@@ -33,7 +38,7 @@ class Layout extends React.Component {
 
                 <List>
                     {this.state.results.map((result) => (
-                        <Result key={result.codeResult.code} result={result} />
+                        <Result onItemTouchTap={this._onItemTouchTapDeleter(result.codeResult.code)} key={result.codeResult.code} result={result} />
                     ))}
                 </List>
                 {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
