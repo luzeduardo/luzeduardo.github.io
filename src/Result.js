@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 
 import {ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
-import {grey400} from 'material-ui/styles/colors';
+import {grey400, darkBlack} from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
+import FontIcon from 'material-ui/FontIcon';
+import Avatar from 'material-ui/Avatar';
 
 const iconButtonElement = (
     <IconButton
@@ -20,15 +22,17 @@ const iconButtonElement = (
 
 const rightIconMenu = (props) => (
     <IconMenu iconButtonElement={iconButtonElement}>
-        <MenuItem>Forward</MenuItem>
         <MenuItem onTouchTap={props.onItemTouchTap}>Delete</MenuItem>
     </IconMenu>
 );
 
+const definedAvatar = (
+    <Avatar
+        size={30}
+        icon={<FontIcon className="muidocs-icon-communication-voicemail" />} />
+) ;
+
 class Result extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     render() {
         const result = this.props.result;
@@ -39,9 +43,16 @@ class Result extends React.Component {
         return (
             <div>
                 <ListItem
+                    leftAvatar={definedAvatar}
                     rightIconButton={rightIconMenu(this.props)}
-                    primaryText={result.codeResult.code}
-                    secondaryText=""
+                    primaryText={result.productName ? result.productName : ''}
+                    secondaryText={
+                        <p>
+                            <span style={{color: darkBlack}}>{result.productPrice ? result.productPrice : ''}</span><br />
+                            {result.codeResult.code}
+                        </p>
+                    }
+                    secondaryTextLines={2}
                 />
                 <Divider inset={true} />
             </div>

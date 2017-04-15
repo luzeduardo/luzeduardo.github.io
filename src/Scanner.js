@@ -39,7 +39,7 @@ class Scanner extends React.Component {
             }
             Quagga.start();
         });
-        Quagga.CameraAccess.enumerateVideoDevices().then(function(devices) { console.log(devices)});
+        // Quagga.CameraAccess.enumerateVideoDevices().then(function(devices) { console.log(devices)});
         Quagga.onDetected(this._onDetected.bind(this));
     }
 
