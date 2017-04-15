@@ -9,6 +9,7 @@
   "dependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.0",
     "express": "^4.15.2",
     "path": "^0.12.7",
@@ -19,8 +20,8 @@
     "webpack": "^2.4.1"
   },
   "scripts": {
-    "build": "webpack --config webpack.prod.config.js",
-    "start": "npm run build && NODE_ENV=production node server.js",
-    "postinstall": "webpack --config webpack.prod.config.js -p --progress --colors"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "postinstall": "npm install --only=dev && npm install && npm run build"
   }
 }
