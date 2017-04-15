@@ -120,7 +120,8 @@ class Layout extends React.Component {
                 <Dialog
                     title="Informe"
                     actions={modalActions}
-                    modal={false}
+                    modal={true}
+                    autoScrollBodyContent={true}
                     open={this.state.modalOpen}
                     onRequestClose={this._modalhandleClose}>
 
