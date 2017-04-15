@@ -21,7 +21,7 @@ class Scanner extends React.Component {
                 }
             },
             locator: {
-                patchSize: "medium",
+                patchSize: "small",
                 halfSample: false
             },
             numOfWorkers: navigator.hardwareConcurrency,
