@@ -24,7 +24,7 @@ class Scanner extends React.Component {
                 patchSize: "medium",
                 halfSample: true
             },
-            numOfWorkers: 4,
+            numOfWorkers: navigator.hardwareConcurrency,
             decoder: {
                 readers : [ "ean_reader"]
             },
