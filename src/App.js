@@ -16,11 +16,13 @@ class App extends Component {
     render() {
         return (
             <div>
-                <button onClick={this._scan.bind(this)}>{this.state.scanning ? 'Stop' : 'Start'}</button>
-                <ul className="results">
-                    {this.state.results.map((result) => (<Result key={result.codeResult.code} result={result} />))}
-                </ul>
-                {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
+                <div className="App">
+                    <button onClick={this._scan.bind(this)}>{this.state.scanning ? 'Stop' : 'Start'}</button>
+                    <ul className="results">
+                        {this.state.results.map((result) => (<Result key={result.codeResult.code} result={result} />))}
+                    </ul>
+                    {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
+                </div>
             </div>
         );
     }
