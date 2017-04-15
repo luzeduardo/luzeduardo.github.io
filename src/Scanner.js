@@ -1,5 +1,6 @@
 import React from 'react';
 import Quagga from 'quagga';
+import PropTypes from 'prop-types';
 
 class Scanner extends React.Component {
 
@@ -47,6 +48,6 @@ class Scanner extends React.Component {
 }
 
 Scanner.propTypes = {
-    onDetected: React.PropTypes.func.isRequired
+    onDetected: PropTypes.func.isRequired
 }
 export default Scanner;
