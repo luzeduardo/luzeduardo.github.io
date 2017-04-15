@@ -1,6 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import {ListItem} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+// import Subheader from 'material-ui/Subheader';
+// import Avatar from 'material-ui/Avatar';
+import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+
+
+const iconButtonElement = (
+    <IconButton
+        touch={true}
+        tooltip="more"
+        tooltipPosition="bottom-left"
+    >
+        <MoreVertIcon color={grey400} />
+    </IconButton>
+);
+
+const rightIconMenu = (
+    <IconMenu iconButtonElement={iconButtonElement}>
+        <MenuItem>Reply</MenuItem>
+        <MenuItem>Forward</MenuItem>
+        <MenuItem>Delete</MenuItem>
+    </IconMenu>
+);
+
 class Result extends React.Component {
     render() {
         const result = this.props.result;
@@ -9,9 +38,16 @@ class Result extends React.Component {
             return null;
         }
         return (
-            <li>
-                {result.codeResult.code} [{result.codeResult.format}]
-            </li>
+            <div>
+                <ListItem
+                    rightIconButton={rightIconMenu}
+                    primaryText={result.codeResult.code}
+                    secondaryText=""
+                    secondaryTextLines={0}
+                />
+                <Divider inset={true} />
+            </div>
+        // {result.codeResult.code} [{result.codeResult.format}]
         );
     }
 }
