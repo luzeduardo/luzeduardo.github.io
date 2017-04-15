@@ -19,10 +19,10 @@ const iconButtonElement = (
     </IconButton>
 );
 
-const rightIconMenu = (
+const rightIconMenu = (props) => (
     <IconMenu iconButtonElement={iconButtonElement}>
         <MenuItem>Forward</MenuItem>
-        <MenuItem onItemTouchTap="" >Delete</MenuItem>
+        <MenuItem onItemTouchTap={props.onItemTouchTap}>Delete</MenuItem>
     </IconMenu>
 );
 
@@ -36,11 +36,9 @@ class Result extends React.Component {
         return (
             <div>
                 <ListItem
-                    onItemTouchTap={this.props.onItemTouchTap}
-                    rightIconButton={rightIconMenu}
+                    rightIconButton={rightIconMenu(this.props)}
                     primaryText={result.codeResult.code}
                     secondaryText=""
-                    secondaryTextLines={0}
                 />
                 <Divider inset={true} />
             </div>
@@ -49,6 +47,7 @@ class Result extends React.Component {
 }
 
 Result.propTypes = {
-    result: PropTypes.object
+    result: PropTypes.object,
+    onItemTouchTap: PropTypes.func
 }
 export default Result;

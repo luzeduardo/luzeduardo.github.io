@@ -47,6 +47,7 @@ class Scanner extends React.Component {
 
     _onDetected(result) {
         this.props.onDetected(result);
+        Quagga.stop();
     }
 }
 
