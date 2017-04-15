@@ -3,17 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.7.0",
-    "sw-precache": "^4.2.2"
+    "react-scripts": "0.7.0"
   },
   "dependencies": {
     "@mars/heroku-js-runtime-env": "^3.0.0",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^6.4.1",
-    "babel-preset-react": "^6.24.1",
-    "bulma": "^0.4.0",
     "css-loader": "^0.28.0",
-    "express": "^4.15.2",
     "material-ui": "^0.17.4",
     "path": "^0.12.7",
     "prop-types": "^15.5.8",
@@ -21,10 +15,6 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-tap-event-plugin": "^2.0.1",
-    "react-toolbox": "^2.0.0-beta.8",
-    "sass-loader": "^6.0.3",
-    "style-loader": "^0.16.1",
-    "webpack": "^2.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
