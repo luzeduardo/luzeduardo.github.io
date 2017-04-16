@@ -1,5 +1,4 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 import Scanner from './Scanner';
 import Result from './Result';
 
@@ -8,6 +7,9 @@ import LinearProgress from 'material-ui/LinearProgress';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import ContentClear from 'material-ui/svg-icons/content/clear';
 
 class Layout extends React.Component {
 
@@ -83,6 +85,15 @@ class Layout extends React.Component {
     }
 
     render() {
+        const style = {
+          margin: 0,
+          top: 'auto',
+          right: 20,
+          bottom: 20,
+          left: 'auto',
+          position: 'fixed'
+        };
+
         const modalActions = [
             <FlatButton
                 label="Ok"
@@ -95,14 +106,7 @@ class Layout extends React.Component {
 
         return (
             <div>
-                <RaisedButton label={this.state.scanning ? 'Parar leitura' : 'Ler código de barras'}
-                              primary={!this.state.scanning }
-                              secondary={this.state.scanning }
-                              onClick={this._scan.bind(this)}
-                              fullWidth={true}
-                />
                 {this.state.scanning ? <LinearProgress mode="indeterminate" /> : null }
-
 
                 <List>
                     {this.state.results.map((result, index) => (
@@ -110,7 +114,6 @@ class Layout extends React.Component {
                     ))}
                 </List>
                 {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
-
 
                 <Dialog
                     title="Informe"
@@ -123,17 +126,23 @@ class Layout extends React.Component {
                         id="modalProductName"
                         hintText="Nome produto"
                         fullWidth={false}
-                        onChange={this._modalhandleChange}
-                    />
+                        onChange={this._modalhandleChange}/>
 
                     <TextField
                         id="modalProductPrice"
                         hintText="Valor"
                         fullWidth={false}
                         type="tel"
-                        onChange={this._modalhandleChange}
-                    />
+                        onChange={this._modalhandleChange}/>
                 </Dialog>
+
+                <FloatingActionButton
+                  primary={!this.state.scanning }
+                  secondary={this.state.scanning }
+                  onClick={this._scan.bind(this)}
+                  style={style}>
+                  { !this.state.scanning ? <ContentAdd /> : <ContentClear /> }
+                </FloatingActionButton>
 
             </div>
         )

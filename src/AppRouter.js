@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MenuItem from 'material-ui/MenuItem';
 import Layout from './Layout';
 import ListPrices from './ListPrices';
+import AppBar from 'material-ui/AppBar';
 
 import {
   BrowserRouter as Router,
@@ -26,10 +27,13 @@ class AppRouter extends React.Component {
     return (
       <Router>
         <div>
-          <RaisedButton
-            label="Open Drawer"
+
+          <AppBar
+            title=""
             onTouchTap={this.handleToggle}
+            iconClassNameRight="muidocs-icon-navigation-expand-more"
           />
+
           <Drawer
             docked={false}
             width={200}
