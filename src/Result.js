@@ -49,7 +49,7 @@ class Result extends React.Component {
                     secondaryText={
                         <p>
                             <span style={{color: darkBlack}}>{result.productPrice ? result.productPrice : ''}</span><br />
-                            {result.codeResult.code}
+                            {result.codeResult.code} - {result.productDate ? result.productDate : ''}
                         </p>
                     }
                     secondaryTextLines={2}
