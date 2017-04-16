@@ -22,7 +22,8 @@ const iconButtonElement = (
 
 const rightIconMenu = (props) => (
     <IconMenu iconButtonElement={iconButtonElement}>
-        <MenuItem onTouchTap={props.onItemTouchTap}>Delete</MenuItem>
+        <MenuItem onTouchTap={props.onItemTouchTapDelete}>Delete</MenuItem>
+        <MenuItem onTouchTap={props.onItemTouchTapEdit}>Edit</MenuItem>
     </IconMenu>
 );
 
@@ -62,6 +63,7 @@ class Result extends React.Component {
 
 Result.propTypes = {
     result: PropTypes.object,
-    onItemTouchTap: PropTypes.func
+    onItemTouchTapEdit: PropTypes.func,
+    onItemTouchTapDelete: PropTypes.func
 }
 export default Result;

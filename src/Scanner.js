@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 
 class Scanner extends React.Component {
 
+    _stopScan(){
+      Quagga.stop();
+    }
+
     render() {
         return (
-            <div id="interactive" className="viewport"/>
+            <div id="interactive" onClick={this._stopScan.bind(this)} className="viewport"/>
         );
     }
 
@@ -15,8 +19,8 @@ class Scanner extends React.Component {
             inputStream: {
                 type : "LiveStream",
                 constraints: {
-                    width: 400,
-                    height: 200,
+                    width: 480,
+                    height: 320,
                     facingMode: "environment"
                 }
             },
@@ -27,6 +31,12 @@ class Scanner extends React.Component {
             numOfWorkers: navigator.hardwareConcurrency > 1 ? navigator.hardwareConcurrency -1 : navigator.hardwareConcurrency ,
             decoder: {
                 readers : [ "ean_reader"]
+            },
+            debug: {
+                drawBoundingBox: false,
+                showFrequency: false,
+                drawScanline: false,
+                showPattern: false
             },
             singleChannel: false,
             locate: true

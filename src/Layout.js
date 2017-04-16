@@ -88,8 +88,8 @@ class Layout extends React.Component {
         const style = {
           margin: 0,
           top: 'auto',
-          // right: 0,
-          bottom: 10,
+          right: 20,
+          bottom: 20,
           left: 'auto',
           position: 'fixed'
         };
@@ -116,8 +116,9 @@ class Layout extends React.Component {
                         result={result} />
                     ))}
                 </List>
+                -----
                 {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
-
+                -----
                 <Dialog
                     title="Informe"
                     actions={modalActions}
