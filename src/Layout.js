@@ -34,7 +34,7 @@ class Layout extends React.Component {
     _modalhandleClose = () => {
         let modalProductName = this.state.modalProductName;
         let modalProductPrice = this.state.modalProductPrice;
-        let modalProductDate = new Date();
+        let modalProductDate = new Date().toString();
 
         let idx = this.state.results.length - 1;
         let results = this.state.results;
