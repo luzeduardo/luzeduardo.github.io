@@ -137,7 +137,6 @@ class Layout extends React.Component {
                 </Dialog>
 
                 <FloatingActionButton
-                  primary={!this.state.scanning }
                   secondary={this.state.scanning }
                   onClick={this._scan.bind(this)}
                   style={style}>

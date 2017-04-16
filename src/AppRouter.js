@@ -1,6 +1,5 @@
 import React from 'react'
 import Drawer from 'material-ui/Drawer';
-import RaisedButton from 'material-ui/RaisedButton';
 import MenuItem from 'material-ui/MenuItem';
 import Layout from './Layout';
 import ListPrices from './ListPrices';
@@ -29,7 +28,7 @@ class AppRouter extends React.Component {
         <div>
 
           <AppBar
-            title=""
+            title="Register Price"
             onTouchTap={this.handleToggle}
             iconClassNameRight="muidocs-icon-navigation-expand-more"
           />
