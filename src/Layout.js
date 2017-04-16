@@ -32,7 +32,7 @@ class Layout extends React.Component {
     };
 
     _modalhandleClose = () => {
-        let modalProductName = this.state.modalProductName;
+        // let modalProductName = this.state.modalProductName;
         let modalProductPrice = this.state.modalProductPrice;
         let modalProductDate = new Date().toString();
 
@@ -41,7 +41,7 @@ class Layout extends React.Component {
         let newResult = results[idx];
 
         newResult = Object.assign(newResult, {
-            'productName': modalProductName,
+            // 'productName': modalProductName,
             'productPrice': modalProductPrice,
             'productDate': modalProductDate
         });
@@ -65,7 +65,7 @@ class Layout extends React.Component {
                 codes: this.state.codes.concat([result.codeResult.code]),
                 results: this.state.results.concat([result]),
                 scanning: false,
-                modalProductName: "",
+                // modalProductName: "",
                 modalProductPrice: "",
                 modalProductDate: ""
             });
@@ -98,7 +98,7 @@ class Layout extends React.Component {
             <FlatButton
                 label="Ok"
                 primary={true}
-                disabled={this.state.modalProductPrice === ""  || this.state.modalProductName === ""}
+                disabled={this.state.modalProductPrice === ""}
                 keyboardFocused={true}
                 onTouchTap={this._modalhandleClose}
             />,
@@ -110,7 +110,10 @@ class Layout extends React.Component {
 
                 <List>
                     {this.state.results.map((result, index) => (
-                        <Result onItemTouchTap={this._onItemTouchTapDeleter.bind(this, result)} key={index} result={result} />
+                        <Result
+                        onItemTouchTapDelete={this._onItemTouchTapDeleter.bind(this, result)} 
+                        key={index}
+                        result={result} />
                     ))}
                 </List>
                 {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
@@ -122,11 +125,11 @@ class Layout extends React.Component {
                     open={this.state.modalOpen}
                     onRequestClose={this._modalhandleClose}>
 
-                    <TextField
+                    {/* <TextField
                         id="modalProductName"
                         hintText="Nome produto"
                         fullWidth={false}
-                        onChange={this._modalhandleChange}/>
+                        onChange={this._modalhandleChange}/> */}
 
                     <TextField
                         id="modalProductPrice"

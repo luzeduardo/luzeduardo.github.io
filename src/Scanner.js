@@ -15,8 +15,8 @@ class Scanner extends React.Component {
             inputStream: {
                 type : "LiveStream",
                 constraints: {
-                    width: 640,
-                    height: 480,
+                    width: 400,
+                    height: 320,
                     facingMode: "environment"
                 }
             },
