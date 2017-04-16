@@ -116,9 +116,7 @@ class Layout extends React.Component {
                         result={result} />
                     ))}
                 </List>
-                -----
-                {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
-                -----
+                {this.state.scanning ? <Scanner onClick={this._scan.bind(this)} onDetected={this._onDetected.bind(this)}/> : null}
                 <Dialog
                     title="Informe"
                     actions={modalActions}
