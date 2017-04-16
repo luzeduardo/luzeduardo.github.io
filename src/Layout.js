@@ -88,8 +88,8 @@ class Layout extends React.Component {
         const style = {
           margin: 0,
           top: 'auto',
-          right: 20,
-          bottom: 20,
+          // right: 0,
+          bottom: 10,
           left: 'auto',
           position: 'fixed'
         };
@@ -111,7 +111,7 @@ class Layout extends React.Component {
                 <List>
                     {this.state.results.map((result, index) => (
                         <Result
-                        onItemTouchTapDelete={this._onItemTouchTapDeleter.bind(this, result)} 
+                        onItemTouchTapDelete={this._onItemTouchTapDeleter.bind(this, result)}
                         key={index}
                         result={result} />
                     ))}
