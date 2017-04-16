@@ -22,7 +22,7 @@ class Layout extends React.Component {
     }
 
     _modalhandleChange = (event) => {
-        this.setState({[event.target.id] : event.target.value });
+        this.setState({[event.target.id] : event.target.value});
     };
 
     _modalhandleOpen = () => {
