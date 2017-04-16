@@ -9,7 +9,6 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
-
 class Layout extends React.Component {
 
     constructor(props){
@@ -83,10 +82,7 @@ class Layout extends React.Component {
         });
     }
 
-
-
     render() {
-
         const modalActions = [
             <FlatButton
                 label="Ok"
