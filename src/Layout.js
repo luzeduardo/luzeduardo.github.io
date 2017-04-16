@@ -91,6 +91,7 @@ class Layout extends React.Component {
             <FlatButton
                 label="Ok"
                 primary={true}
+                disabled={this.state.modalProductPrice === ""  || this.state.modalProductName === ""}
                 keyboardFocused={true}
                 onTouchTap={this._modalhandleClose}
             />,
@@ -98,14 +99,13 @@ class Layout extends React.Component {
 
         return (
             <div>
-                {this.state.scanning ? <LinearProgress mode="indeterminate" /> : null }
-
                 <RaisedButton label={this.state.scanning ? 'Parar leitura' : 'Ler código de barras'}
                               primary={!this.state.scanning }
                               secondary={this.state.scanning }
                               onClick={this._scan.bind(this)}
                               fullWidth={true}
                 />
+                {this.state.scanning ? <LinearProgress mode="indeterminate" /> : null }
 
 
                 <List>
@@ -116,26 +116,24 @@ class Layout extends React.Component {
                 {this.state.scanning ? <Scanner onDetected={this._onDetected.bind(this)}/> : null}
 
 
-
                 <Dialog
                     title="Informe"
                     actions={modalActions}
                     modal={true}
-                    autoScrollBodyContent={true}
                     open={this.state.modalOpen}
                     onRequestClose={this._modalhandleClose}>
 
                     <TextField
                         id="modalProductName"
                         hintText="Nome produto"
-                        fullWidth={true}
+                        fullWidth={false}
                         onChange={this._modalhandleChange}
                     />
 
                     <TextField
                         id="modalProductPrice"
                         hintText="Valor"
-                        fullWidth={true}
+                        fullWidth={false}
                         type="tel"
                         onChange={this._modalhandleChange}
                     />
