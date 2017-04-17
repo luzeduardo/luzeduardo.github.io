@@ -18,3 +18,5 @@ export function addTodo(product) {
 export function deleteButtonPressed(product) {
   db.remove(product);
 }
+
+// https://www.upccodesearch.com/api/v1/search?query=7898409957970
