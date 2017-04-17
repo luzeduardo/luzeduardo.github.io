@@ -5,17 +5,12 @@ import PropTypes from 'prop-types';
 class Scanner extends React.Component {
 
     _stopScan(){
-      this.setState({show:false});
       Quagga.stop();
     }
 
     render() {
         return (
-          <div>
-            { this.state.show
-              ? <div id="interactive" onClick={this._stopScan.bind(this)} className="viewport"/>
-              : null}
-          </div>    
+            <div id="interactive" onClick={this._stopScan.bind(this)} className="viewport"/>
         );
     }
 
@@ -58,7 +53,6 @@ class Scanner extends React.Component {
     }
 
     componentWillUnmount() {
-        this.setState({show:true});
         Quagga.offDetected(this._onDetected.bind(this));
     }
 

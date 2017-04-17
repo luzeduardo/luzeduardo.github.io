@@ -7,7 +7,7 @@ import LinearProgress from 'material-ui/LinearProgress';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import ContentClear from 'material-ui/svg-icons/content/clear';
 
@@ -106,6 +106,13 @@ class Layout extends React.Component {
 
         return (
             <div>
+                <RaisedButton
+                label={ !this.state.scanning ? "Start Scan" : "Stop Scan" }
+                backgroundColor="#a4c639"
+                secondary={this.state.scanning }
+                onClick={this._scan.bind(this)}
+                fullWidth={true} />
+
                 {this.state.scanning ? <LinearProgress mode="indeterminate" /> : null }
 
                 <List>
@@ -137,13 +144,6 @@ class Layout extends React.Component {
                         type="tel"
                         onChange={this._modalhandleChange}/>
                 </Dialog>
-
-                <FloatingActionButton
-                  secondary={this.state.scanning }
-                  onClick={this._scan.bind(this)}
-                  style={style}>
-                  { !this.state.scanning ? <ContentAdd /> : <ContentClear /> }
-                </FloatingActionButton>
 
             </div>
         )

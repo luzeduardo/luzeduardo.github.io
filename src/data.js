@@ -1,15 +1,20 @@
 const PouchDB = require('pouchdb-browser');
 const db = new PouchDB('prices');
 
-function addTodo(product) {
+export function addTodo(product) {
   var todo = {
-    _id: new Date().toISOString(),
-    title: text,
-    completed: false
+    _id: product.codeResult.code
+    date: new Date().toISOString(),
+    title: product.productName,
+    price: product.productPrice
   };
   db.put(todo, function callback(err, result) {
     if (!err) {
-      console.log('Successfully posted a todo!');
+      console.log('Successfully posted a product!');
     }
   });
+}
+
+export function deleteButtonPressed(product) {
+  db.remove(product);
 }
